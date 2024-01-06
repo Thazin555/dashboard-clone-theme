@@ -1,9 +1,11 @@
 import React from 'react'
-import Container from '../Components/Container'
+import HomeMainSection from '../Components/HomeMainSection'
 
 const Home = () => {
   return (
-    <Container>Home</Container>
+    <div>
+      <HomeMainSection/>
+    </div>
   )
 }
 
