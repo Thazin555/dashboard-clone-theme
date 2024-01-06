@@ -1,13 +1,14 @@
-import React from 'react'
-import Weekly from './Components/Weekly'
+import React from "react";
 import "flowbite";
+
+import Home from "./Pages/Home";
 
 const App = () => {
   return (
     <div>
-      <Weekly/>
+      <Home />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
