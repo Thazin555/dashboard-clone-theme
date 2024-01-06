@@ -3,10 +3,11 @@ import React from "react";
 const Weekly = () => {
   return (
     <div className=" max-w-[1200px] p-[24px] mx-auto">
-      <div className="container  mx-auto mt-10 ">
-        <div className="grid gap-4 md:grid-cols-12 lg:grid-cols-12 md:gap-5 px-10 md:px-10 lg:px-5 ">
+      <div className=" ">
+        <div className="grid gap-4 md:grid-cols-12 lg:grid-cols-12 md:gap-5  ">
           {/* grid 1 */}
-          <div className="col-span-8  md:me-0 lg:me-0  md:col-span-4 lg:col-span-4 border border-slate-200 px-4 shadow-md">
+          <div className="col-span-8    md:col-span-4 lg:col-span-4 border
+           border-slate-200 px-4 shadow-md">
             {/* grid 1 header */}
             <div className="mt-5  px-2">
               <h1 className="font-bold  text-lg tracking-wide">Weekly Stats</h1>
@@ -130,7 +131,7 @@ const Weekly = () => {
             </div>
           </div>
           {/* grid 2  */}
-          <div className="col-span-8  border border-slate-200  md:pe-0 lg:pe-0 shadow-md">
+          <div className="col-span-8  border border-slate-200  shadow-md">
             {/* grid 2 foot header */}
             <div className="flex mt-5 mb-6 px-4 items-center justify-between">
               <div>
@@ -158,10 +159,10 @@ const Weekly = () => {
                     <th scope="col" className="px-6 py-4">
                       Assigned
                     </th>
-                    <th scope="col" className="ps-14 md:ps-14 lg:-px-6 py-6">
+                    <th scope="col" className="ps-14 md:ps-14 lg:px-6 py-6">
                       Name
                     </th>
-                    <th scope="col" className="px-6 py-6 ps-14 md:ps-14">
+                    <th scope="col" className="px-6 py-6 ps-14 lg:px-6 md:ps-14">
                       Priority
                     </th>
                     <th scope="col" className="px-6 py-6">
@@ -190,16 +191,17 @@ const Weekly = () => {
                         </div>
                       </div>
                     </th>
-                    <td className=" ps-14 md:ps-14lg:-px-6 py-4">
-                      {" "}
+                    <td className=" ps-14 md:ps-14 lg:px-6 py-4">
+                      
+
                       Elite Admin
                     </td>
-                    <td className="ps-14 md:ps-14lg:-px-6 py-4">
+                    <td className="ps-14 md:ps-14 lg:px-6 py-4">
                       <span className="px-2 py-1 text-xs font-semibold text-[#59a2c9] bg-[#e8f7ff] rounded-md">
                         Low
                       </span>
                     </td>
-                    <td className="ps-14 md:ps-14lg:-px-6 py-4">$3.9k</td>
+                    <td className=" px-6 py-4">$3.9k</td>
                   </tr>
                   <tr className="border-b bg-white">
                     <th
@@ -221,15 +223,15 @@ const Weekly = () => {
                         </div>
                       </div>
                     </th>
-                    <td className=" text-nowrap ps-14 md:ps-14lg:-px-6 py-4">
+                    <td className=" text-nowrap ps-14 md:ps-14 lg:px-6 py-4">
                       Real Homes Theme
                     </td>
-                    <td className="ps-14 md:ps-14lg:-px-6    py-4">
+                    <td className="ps-14 md:ps-14 lg:px-6    py-4">
                       <span className="px-2 py-1 font-semibold text-xs text-blue-500 bg-blue-100 rounded-md">
                         Medium
                       </span>
                     </td>
-                    <td className="ps-14 md:ps-14lg:-px-6 py-4">$24.5k</td>
+                    <td className="px-6 py-4">$24.5k</td>
                   </tr>
                   <tr className="border-b bg-white">
                     <th
@@ -252,15 +254,15 @@ const Weekly = () => {
                         </div>
                       </div>
                     </th>
-                    <td className="ps-14 md:ps-14lg:-px-6 py-4">
+                    <td className="ps-14 md:ps-14 lg:px-6 py-4">
                       MedicalPro Theme
                     </td>
-                    <td className="ps-14 md:ps-14lg:-px-6 py-4">
+                    <td className="ps-14 md:ps-14 lg:px-6 py-4">
                       <span className="px-2 py-1 text-xs font-semibold text-orange-400 bg-orange-100 rounded-md">
                         High
                       </span>
                     </td>
-                    <td className="ps-14 md:ps-14lg:-px-6 py-4">$12.8k</td>
+                    <td className="px-6 py-4">$12.8k</td>
                   </tr>
                   <tr className=" bg-white">
                     <th
@@ -282,15 +284,15 @@ const Weekly = () => {
                         </div>
                       </div>
                     </th>
-                    <td className="text-nowrap ps-14 md:ps-14lg:-px-6 py-4">
+                    <td className="text-nowrap ps-14 md:ps-14 lg:px-6 py-4">
                       Hosting Press HTML
                     </td>
-                    <td className="ps-14 md:ps-14lg:-px-6 py-4">
+                    <td className="ps-14 md:ps-14 lg:px-6 py-4">
                       <span className="px-2 py-1 text-xs font-semibold text-[#fa896b] bg-[#fdede8] rounded-md">
                         Critical
                       </span>
                     </td>
-                    <td className="ps-14 md:ps-14lg:-px-6 py-4">$2.4k</td>
+                    <td className="px-6 py-4">$2.4k</td>
                   </tr>
                 </tbody>
               </table>

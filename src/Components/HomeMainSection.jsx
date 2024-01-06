@@ -1,10 +1,10 @@
-import React from 'react'
-import Container from './Container'
+import React from "react";
+import Container from "./Container";
 
 const HomeMainSection = () => {
-  return (
-    <Container>HomeMainSection</Container>
-  )
-}
+  return <Container>
+    
+  </Container>;
+};
 
-export default HomeMainSection
+export default HomeMainSection;
