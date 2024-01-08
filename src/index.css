@@ -2,3 +2,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.wrap{
+    position: relative;
+    width: calc(100% - 270px);
+    left: 270px;
+    /* background-color: pink; */
+}
+
+.min-wrap{
+    position: relative;
+    width: calc(100% - 79px);
+    left: 79px;
+    /* background-color: pink; */
+}

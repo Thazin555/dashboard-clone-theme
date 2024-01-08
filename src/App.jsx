@@ -1,12 +1,14 @@
-import React from 'react'
-import Home from './Pages/Home'
+import React from "react";
+import Home from "./Pages/Home";
+import DropdownTest from "./Components/DropdownTest";
 
 const App = () => {
   return (
     <div>
-      <Home/>
+      <Home />
+      {/* <DropdownTest /> */}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
