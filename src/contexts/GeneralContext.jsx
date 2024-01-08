@@ -1,8 +1,8 @@
-import React, { createContext } from 'react'
+import React, { createContext, useState } from 'react'
 export const GeneralContext=createContext()
 const GeneralContextProvider = ({children}) => {
   return (
-    <GeneralContext.Provider value={{name:"C"}} >{children}</GeneralContext.Provider>
+    <GeneralContext.Provider value={{m:"m"}} >{children}</GeneralContext.Provider>
   )
 }
 
