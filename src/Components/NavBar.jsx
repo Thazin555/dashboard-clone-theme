@@ -12,7 +12,6 @@ import FlagIcon from "../img/flag.svg";
 import FlagEs from "../img/flag-es.svg";
 import FlagFr from "../img/flag-fr.svg";
 import FlagCh from "../img/flag-ch.svg";
-import { faL } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({ handleMenu, menu }) => {
   const [openApp, setOpenApp] = useState(false);
@@ -56,6 +55,20 @@ const NavBar = ({ handleMenu, menu }) => {
   const handleIsOpen = () => {
     setIsOpen(!isOpen);
   };
+
+  const [offsetDistance, setOffsetDistance] = useState("");
+  useEffect(() => {
+    const handleResize = () => {
+      setOffsetDistance(window.innerWidth <= 768 ? "-110" : "-50");
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <>
@@ -104,7 +117,7 @@ const NavBar = ({ handleMenu, menu }) => {
                   </button>
                   {/* app dropdown  */}
                   {openApp && (
-                    <div className="shadow rounded w-[830px] absolute top-14 left-[120px]">
+                    <div className="shadow rounded w-[830px] absolute top-14 left-[120px] z-50 bg-white">
                       <div className="grid grid-cols-12">
                         <div className="col-span-8  grid grid-cols-12">
                           <div className="col-span-6 p-9 ps-8 pb-0">
@@ -217,11 +230,9 @@ const NavBar = ({ handleMenu, menu }) => {
                                 className="font-san text-[#2a3547] block"
                               >
                                 <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
+                                  Calendar App
                                 </h5>
-                                <span className="text-xs">
-                                  Messages & Emails
-                                </span>
+                                <span className="text-xs">Get Dates</span>
                               </a>
                             </div>
                             <div className="flex items-center gap-4 mb-6">
@@ -236,10 +247,10 @@ const NavBar = ({ handleMenu, menu }) => {
                                 className="font-san text-[#2a3547] block"
                               >
                                 <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
+                                  Tickets App
                                 </h5>
                                 <span className="text-xs">
-                                  Messages & Emails
+                                  Create new ticket
                                 </span>
                               </a>
                             </div>
@@ -255,10 +266,10 @@ const NavBar = ({ handleMenu, menu }) => {
                                 className="font-san text-[#2a3547] block"
                               >
                                 <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
+                                  Courses
                                 </h5>
                                 <span className="text-xs">
-                                  Messages & Emails
+                                  Create new course
                                 </span>
                               </a>
                             </div>
@@ -429,16 +440,32 @@ const NavBar = ({ handleMenu, menu }) => {
                             <a href="#" className="flex items-center gap-4">
                               <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
                                 <img
-                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-cart.svg"
                                   alt=""
                                 />
                               </div>
                               <div className="text-[#2A3547]">
                                 <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
+                                  eCommerce App
+                                </h5>
+                                <span className="text-xs">Buy a Product</span>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-invoice.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text-[#2A3547]">
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Invoice App
                                 </h5>
                                 <span className="text-xs">
-                                  Messages & Emails
+                                  Get latest invoice
                                 </span>
                               </div>
                             </a>
@@ -447,16 +474,32 @@ const NavBar = ({ handleMenu, menu }) => {
                             <a href="#" className="flex items-center gap-4">
                               <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
                                 <img
-                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-date.svg"
                                   alt=""
                                 />
                               </div>
                               <div className="text-[#2A3547]">
                                 <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
+                                  Calendar App
+                                </h5>
+                                <span className="text-xs">Get Dates</span>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-mobile.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text-[#2A3547]">
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Contact Application
                                 </h5>
                                 <span className="text-xs">
-                                  Messages & Emails
+                                  2 Unsaved Contacts
                                 </span>
                               </div>
                             </a>
@@ -465,16 +508,16 @@ const NavBar = ({ handleMenu, menu }) => {
                             <a href="#" className="flex items-center gap-4">
                               <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
                                 <img
-                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-lifebuoy.svg"
                                   alt=""
                                 />
                               </div>
                               <div className="text-[#2A3547]">
                                 <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
+                                  Tickets App
                                 </h5>
                                 <span className="text-xs">
-                                  Messages & Emails
+                                  Create new ticket
                                 </span>
                               </div>
                             </a>
@@ -483,17 +526,15 @@ const NavBar = ({ handleMenu, menu }) => {
                             <a href="#" className="flex items-center gap-4">
                               <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
                                 <img
-                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-message-box.svg"
                                   alt=""
                                 />
                               </div>
                               <div className="text-[#2A3547]">
                                 <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
+                                  Email App
                                 </h5>
-                                <span className="text-xs">
-                                  Messages & Emails
-                                </span>
+                                <span className="text-xs">Get new emails</span>
                               </div>
                             </a>
                           </li>
@@ -501,83 +542,65 @@ const NavBar = ({ handleMenu, menu }) => {
                             <a href="#" className="flex items-center gap-4">
                               <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
                                 <img
-                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-application.svg"
                                   alt=""
                                 />
                               </div>
                               <div className="text-[#2A3547]">
                                 <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
+                                  Courses
                                 </h5>
                                 <span className="text-xs">
-                                  Messages & Emails
-                                </span>
-                              </div>
-                            </a>
-                          </li>
-                          <li className="mb-6">
-                            <a href="#" className="flex items-center gap-4">
-                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
-                                <img
-                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="text-[#2A3547]">
-                                <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
-                                </h5>
-                                <span className="text-xs">
-                                  Messages & Emails
-                                </span>
-                              </div>
-                            </a>
-                          </li>
-                          <li className="mb-6">
-                            <a href="#" className="flex items-center gap-4">
-                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
-                                <img
-                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
-                                  alt=""
-                                />
-                              </div>
-                              <div className="text-[#2A3547]">
-                                <h5 className="text-sm font-semibold hover:text-blue-500">
-                                  Chat Application
-                                </h5>
-                                <span className="text-xs">
-                                  Messages & Emails
+                                  Create new course
                                 </span>
                               </div>
                             </a>
                           </li>
                         </ul>
                         <div className="font-san text-[#2a3547] font-semibold">
-                          <h3 className="font-san font-semibold text-lg text-[#2a3547] mb-4">Quick Links</h3>
+                          <h3 className="font-san font-semibold text-lg text-[#2a3547] mb-4">
+                            Quick Links
+                          </h3>
                           <ul>
                             <li className="py-2 hover:text-[#5d87ff]">
-                              <a href="#" className="text-sm block">Pricing Page</a>
+                              <a href="#" className="text-sm block">
+                                Pricing Page
+                              </a>
                             </li>
                             <li className="py-2 hover:text-[#5d87ff]">
-                              <a href="#" className="text-sm block">Pricing Page</a>
+                              <a href="#" className="text-sm block">
+                                Authentication Design
+                              </a>
                             </li>
                             <li className="py-2 hover:text-[#5d87ff]">
-                              <a href="#" className="text-sm block">Pricing Page</a>
+                              <a href="#" className="text-sm block">
+                                Register Now
+                              </a>
                             </li>
                             <li className="py-2 hover:text-[#5d87ff]">
-                              <a href="#" className="text-sm block">Pricing Page</a>
+                              <a href="#" className="text-sm block">
+                                404 Error
+                              </a>
                             </li>
                             <li className="py-2 hover:text-[#5d87ff]">
-                              <a href="#" className="text-sm block">Pricing Page</a>
+                              <a href="#" className="text-sm block">
+                                Notes App
+                              </a>
                             </li>
                             <li className="py-2 hover:text-[#5d87ff]">
-                              <a href="#" className="text-sm block">Pricing Page</a>
+                              <a href="#" className="text-sm block">
+                                Emplyee App
+                              </a>
                             </li>
                             <li className="py-2 hover:text-[#5d87ff]">
-                              <a href="#" className="text-sm block">Pricing Page</a>
+                              <a href="#" className="text-sm block">
+                                Todo Application
+                              </a>
                             </li>
                             <li className="py-2 hover:text-[#5d87ff]">
-                              <a href="#" className="text-sm block">Pricing Page</a>
+                              <a href="#" className="text-sm block">
+                                Treeview
+                              </a>
                             </li>
                           </ul>
                         </div>
@@ -585,13 +608,28 @@ const NavBar = ({ handleMenu, menu }) => {
                     )}
                   </li>
                   <li>
-                    <a href="#" className="block text-base font-semibold text-black/70 py-3">Calendar</a>
+                    <a
+                      href="#"
+                      className="block text-base font-semibold text-black/70 py-3"
+                    >
+                      Calendar
+                    </a>
                   </li>
                   <li>
-                    <a href="#" className="block text-base font-semibold text-black/70 py-3">Chat</a>
+                    <a
+                      href="#"
+                      className="block text-base font-semibold text-black/70 py-3"
+                    >
+                      Chat
+                    </a>
                   </li>
                   <li>
-                    <a href="#" className="block text-base font-semibold text-black/70 py-3">Email</a>
+                    <a
+                      href="#"
+                      className="block text-base font-semibold text-black/70 py-3"
+                    >
+                      Email
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -645,9 +683,9 @@ const NavBar = ({ handleMenu, menu }) => {
             <button
               id="dropdownNotificationButton"
               data-dropdown-toggle="dropdownNotification"
-              data-dropdown-offset-distance="-50"
+              data-dropdown-offset-distance={offsetDistance}
               data-dropdown-offset-skidding="295"
-              data-dropdown-placement="right"
+              data-dropdown-placement="left"
               className="w-12 h-12 rounded-full hover:bg-gray-100 flex items-center justify-center relative"
             >
               <Bell size={24} />
@@ -777,7 +815,7 @@ const NavBar = ({ handleMenu, menu }) => {
               </button>
               {/* profile dropdown  */}
               {openProfile && (
-                <div className="-translate-x-[315px] absolute shadow px-8 py-2 w-[360px]">
+                <div className="-translate-x-[305px] -translate-y-16 xl:-translate-x-[315px] xl:translate-y-0 lg:-translate-x-[315px] lg:translate-y-0 md:-translate-x-[315px] md:translate-y-0 absolute shadow px-8 py-2 w-[360px] z-50 bg-white">
                   {/* <div className=""> */}
                   <div className="py-4">
                     <h3 className="font-san text-base font-semibold text-[#2a3547]">
@@ -961,16 +999,6 @@ const NavBar = ({ handleMenu, menu }) => {
         <div></div>
       </nav>
 
-      {/* <section className={`wrap ${menu && "min-wrap"}`}>
-        <div className="p-6 max-w-[1200px] mx-auto">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            eaque quo iste illum soluta, aut nisi, cupiditate perferendis ipsam
-            eos maiores pariatur fugiat animi error vero cum, perspiciatis velit
-            magnam?
-          </p>
-        </div>
-      </section> */}
     </>
   );
 };

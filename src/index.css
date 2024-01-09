@@ -14,6 +14,13 @@
   width: calc(100% - 79px);
   left: 79px;
 } */
+@media (min-width: 1024px) {
+  .wrap {
+    position: relative;
+    width: calc(100% - 79px);
+    left: 79px;
+  }
+}
 
 @media (min-width: 1366px) {
   .wrap {
@@ -29,3 +36,5 @@
     /* background-color: pink; */
   }
 }
+
+

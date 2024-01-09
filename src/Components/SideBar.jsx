@@ -3,6 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Circle, Files, Table } from "@phosphor-icons/react";
 import React, { useState } from "react";
 import Logo from "../img/logo.svg";
+import TableLogo from "../img/table.svg";
+import RegisterLogo from "../img/register.svg";
+import AnalyticalLogo from "../img/analytical.svg";
+import FormLogo from "../img/form.svg";
 
 const SideBar = ({ menu }) => {
   // console.log(menu);
@@ -29,21 +33,32 @@ const SideBar = ({ menu }) => {
   return (
     <div className="group">
       <aside
-        className={`xl:fixed xl:block md:hidden hidden w-[270px] h-screen  border border-gray-300 ${
+        className={`xl:fixed xl:block lg:fixed lg:block md:hidden hidden xl:w-[270px] lg:w-[79px] h-screen  border border-gray-300 ${
           menu &&
-          "w-[79px] group-hover:w-[270px] group-hover:bg-white group-hover:z-50 duration-300 overflow-hidden"
+          "xl:w-[79px] group-hover:w-[270px] group-hover:bg-white group-hover:z-50 duration-300 overflow-hidden"
         }`}
       >
-        <div className={`flex flex-col h-screen ${menu && "w-[270px]"}`}>
+        <div
+          className={`flex flex-col h-screen ${
+            menu && "xl:w-[270px] lg:w-[79px]"
+          }`}
+        >
           {/* header  */}
           <div className="p-5">
             {menu ? (
               <img src={Logo} alt="" />
             ) : (
-              <img
-                src="https://modernize-angular-main.netlify.app/assets/images/logos/dark-logo.svg"
-                alt=""
-              />
+              <>
+                <span className="xl:block lg:hidden">
+                  <img
+                    src="https://modernize-angular-main.netlify.app/assets/images/logos/dark-logo.svg"
+                    alt=""
+                  />
+                </span>
+                <span className="xl:hidden lg:block">
+                  <img src={Logo} alt="" />
+                </span>
+              </>
             )}
           </div>
           {/* body  */}
@@ -57,14 +72,14 @@ const SideBar = ({ menu }) => {
                 Home
               </span>
               <ul>
-                <li>
+                <li className="xl:block lg:hidden">
                   <a
                     href="#"
                     className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 bg-blue-400 ${
                       menu ? "gap-7 group-hover:gap-[14px]" : "gap-[14px]"
                     }`}
                   >
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -77,8 +92,17 @@ const SideBar = ({ menu }) => {
                         strokeLinejoin="round"
                         d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
                       />
-                    </svg>
+                    </svg> */}
+                    <img className="w-5 h-5" src={AnalyticalLogo} alt="" />
                     Analytical
+                  </a>
+                </li>
+                <li className="xl:hidden lg:block">
+                  <a
+                    href="#"
+                    className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-300 bg-blue-400`}
+                  >
+                    <img className="w-7 h-7" src={AnalyticalLogo} alt="" />
                   </a>
                 </li>
               </ul>
@@ -88,15 +112,25 @@ const SideBar = ({ menu }) => {
                 Forms
               </span>
               <ul>
-                <li>
+                <li className="xl:block lg:hidden">
                   <a
                     href="#"
                     className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 ${
                       menu ? "gap-7 group-hover:gap-[14px]" : "gap-[14px]"
                     }`}
                   >
-                    <Files size={20} />
+                    <img className="w-[22px] h-[22px]" src={FormLogo} alt="" />
+                    {/* <Files size={20} /> */}
                     Form Wizard
+                  </a>
+                </li>
+                <li className="xl:hidden lg:block">
+                  <a
+                    href="#"
+                    className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-300`}
+                  >
+                    {/* <Files size={20} /> */}
+                    <img className="w-[22px] h-[22px]" src={FormLogo} alt="" />
                   </a>
                 </li>
               </ul>
@@ -108,13 +142,13 @@ const SideBar = ({ menu }) => {
               <ul>
                 <li>
                   <div
-                    href=""
-                    className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200 ${
+                    className={`xl:flex lg:hidden items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200 ${
                       menu ? "gap-7 group-hover:gap-[14px]" : "gap-[14px]"
                     }`}
                     onClick={handleTable}
                   >
-                    <Table size={20} />
+                    {/* <Table size={20} /> */}
+                    <img className="w-5 h-5" src={TableLogo} alt="" />
                     <span className="flex items-center flex-grow justify-between select-none">
                       Tables
                       <svg
@@ -135,9 +169,16 @@ const SideBar = ({ menu }) => {
                       </svg>
                     </span>
                   </div>
+                  <div
+                    className={`xl:hidden lg:flex justify-center py-3 hover:bg-gray-100 rounded-md duration-300`}
+                    onClick={handleTable}
+                  >
+                    {/* <Table size={20} /> */}
+                    <img className="w-5 h-5" src={TableLogo} alt="" />
+                  </div>
                   {tableOpen && (
                     <ul>
-                      <li>
+                      <li className="xl:block lg:hidden">
                         <a
                           href=""
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 ${
@@ -149,6 +190,15 @@ const SideBar = ({ menu }) => {
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
                           Basic Table
+                        </a>
+                      </li>
+                      <li className="xl:hidden lg:block">
+                        <a
+                          href=""
+                          className={`flex items-center py-3 hover:bg-gray-100 rounded-md duration-300 gap-5 px-2.5`}
+                        >
+                          {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
+                          <Circle size={11} />
                         </a>
                       </li>
                     </ul>
@@ -163,8 +213,7 @@ const SideBar = ({ menu }) => {
               <ul>
                 <li>
                   <div
-                    href=""
-                    className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200 ${
+                    className={`xl:flex lg:hidden items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200 ${
                       menu ? "gap-7 group-hover:gap-[14px]" : "gap-[14px]"
                     }`}
                     onClick={handleLogin}
@@ -204,9 +253,28 @@ const SideBar = ({ menu }) => {
                       </svg>
                     </span>
                   </div>
+                  <div
+                    className={`xl:hidden lg:flex justify-center py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200`}
+                    onClick={handleLogin}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 9l-3 3m0 0 3 3m-3-3h12.75"
+                      />
+                    </svg>
+                  </div>
                   {loginOpen && (
                     <ul>
-                      <li>
+                      <li className="xl:block lg:hidden">
                         <a
                           href=""
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 ${
@@ -220,18 +288,26 @@ const SideBar = ({ menu }) => {
                           Side Login
                         </a>
                       </li>
+                      <li className="xl:hidden lg:block">
+                        <a
+                          href=""
+                          className={`flex justify-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300`}
+                        >
+                          {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
+                          <Circle size={11} />
+                        </a>
+                      </li>
                     </ul>
                   )}
                 </li>
                 <li>
                   <div
-                    href=""
-                    className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200 ${
+                    className={`xl:flex lg:hidden items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200 ${
                       menu ? "gap-7 group-hover:gap-[14px]" : "gap-[14px]"
                     }`}
                     onClick={handleRegister}
                   >
-                    <svg
+                    {/* <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -244,7 +320,8 @@ const SideBar = ({ menu }) => {
                         strokeLinejoin="round"
                         d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"
                       />
-                    </svg>
+                    </svg> */}
+                    <img className="w-5 h-5" src={RegisterLogo} alt="" />
 
                     <span className="flex items-center flex-grow justify-between select-none">
                       Register
@@ -266,9 +343,28 @@ const SideBar = ({ menu }) => {
                       </svg>
                     </span>
                   </div>
+                  <div
+                    className={`xl:hidden lg:flex justify-center py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200`}
+                    onClick={handleRegister}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"
+                      />
+                    </svg>
+                  </div>
                   {registerOpen && (
                     <ul>
-                      <li>
+                      <li className="xl:block lg:hidden">
                         <a
                           href=""
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 ${
@@ -282,6 +378,15 @@ const SideBar = ({ menu }) => {
                           Side Login
                         </a>
                       </li>
+                      <li className="xl:hidden lg:block">
+                        <a
+                          href=""
+                          className={`flex justify-center py-3 hover:bg-gray-100 rounded-md duration-300`}
+                        >
+                          {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
+                          <Circle size={11} />
+                        </a>
+                      </li>
                     </ul>
                   )}
                 </li>
@@ -289,7 +394,11 @@ const SideBar = ({ menu }) => {
             </div>
           </div>
           {/* footer  */}
-          <div className={`p-6 mt-auto ${menu && "hidden group-hover:block"}`}>
+          <div
+            className={`p-6 mt-auto lg:hidden xl:block ${
+              menu && "xl:hidden group-hover:block"
+            }`}
+          >
             <div className="p-4 bg-[#e8f7ff] rounded-lg flex items-center gap-[30px]">
               <div className="flex items-center gap-4">
                 <img
@@ -326,7 +435,7 @@ const SideBar = ({ menu }) => {
       {/* md & mobile device  */}
       {menu && (
         <aside
-          className={`fixed block xl:hidden  w-[270px] h-screen  border border-gray-300 bg-white`}
+          className={`fixed block xl:hidden  w-[270px] h-screen  border border-gray-300 bg-white z-50`}
         >
           <div className={`flex flex-col h-screen ${menu && "w-[270px]"}`}>
             {/* header  */}
@@ -356,7 +465,7 @@ const SideBar = ({ menu }) => {
                       href=""
                       className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 bg-blue-400 gap-[14px]`}
                     >
-                      <svg
+                      {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -369,7 +478,8 @@ const SideBar = ({ menu }) => {
                           strokeLinejoin="round"
                           d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
                         />
-                      </svg>
+                      </svg> */}
+                      <img className="w-5 h-5" src={AnalyticalLogo} alt="" />
                       Analytical
                     </a>
                   </li>
@@ -385,7 +495,8 @@ const SideBar = ({ menu }) => {
                       href="#"
                       className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 gap-[14px]`}
                     >
-                      <Files size={20} />
+                      {/* <Files size={20} /> */}
+                      <img className="w-[22px] h-[22px]" src={FormLogo} alt="" />
                       Form Wizard
                     </a>
                   </li>
@@ -402,7 +513,8 @@ const SideBar = ({ menu }) => {
                       className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200 gap-[14px]`}
                       onClick={handleTable}
                     >
-                      <Table size={20} />
+                      {/* <Table size={20} /> */}
+                      <img className="w-5 h-5" src={TableLogo} alt="" />
                       <span className="flex items-center flex-grow justify-between select-none">
                         Tables
                         <svg
@@ -507,7 +619,7 @@ const SideBar = ({ menu }) => {
                       className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200 gap-[14px]`}
                       onClick={handleRegister}
                     >
-                      <svg
+                      {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -520,7 +632,8 @@ const SideBar = ({ menu }) => {
                           strokeLinejoin="round"
                           d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"
                         />
-                      </svg>
+                      </svg> */}
+                      <img className="w-5 h-5" src={RegisterLogo} alt="" />
 
                       <span className="flex items-center flex-grow justify-between select-none">
                         Register
