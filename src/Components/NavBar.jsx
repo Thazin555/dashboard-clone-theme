@@ -1,5 +1,6 @@
 import {
   Bell,
+  DotsNine,
   EnvelopeSimple,
   List,
   MagnifyingGlass,
@@ -11,6 +12,7 @@ import FlagIcon from "../img/flag.svg";
 import FlagEs from "../img/flag-es.svg";
 import FlagFr from "../img/flag-fr.svg";
 import FlagCh from "../img/flag-ch.svg";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = ({ handleMenu, menu }) => {
   const [openApp, setOpenApp] = useState(false);
@@ -50,12 +52,14 @@ const NavBar = ({ handleMenu, menu }) => {
     };
   }, []);
 
+  const [isOpen, setIsOpen] = useState(false);
+  const handleIsOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <nav className={`wrap ${menu && "min-wrap"}  h-[70px] px-4`}>
-        {/* <button onClick={handleMenu}>
-        <List size={20} />
-      </button> */}
         <div className="h-full flex items-center justify-between">
           {/* left side  */}
           <div className="h-full flex items-center">
@@ -73,7 +77,7 @@ const NavBar = ({ handleMenu, menu }) => {
               <MagnifyingGlass size={20} />
             </button>
             <div>
-              <ul className="flex gap-1 font-san text-sm">
+              <ul className="xl:flex gap-1 font-san text-sm md:hidden hidden">
                 <li
                   ref={dropdownRef}
                   className="px-2 py-1.5 rounded-lg hover:bg-gray-200"
@@ -322,6 +326,277 @@ const NavBar = ({ handleMenu, menu }) => {
           </div>
           {/* right side  */}
           <div className="flex items-center">
+            {/* link  */}
+            <button
+              data-drawer-target="drawer-right-example"
+              data-drawer-show="drawer-right-example"
+              data-drawer-placement="right"
+              aria-controls="drawer-right-example"
+              className="w-12 h-12 rounded-full hover:bg-gray-100 flex items-center justify-center xl:hidden"
+            >
+              <img
+                width="20"
+                height="20"
+                src="https://img.icons8.com/external-royyan-wijaya-detailed-outline-royyan-wijaya/24/external-dots-interface-royyan-wijaya-detailed-outline-royyan-wijaya.png"
+              />
+              {/* <DotsNine size={22} /> */}
+            </button>
+            {/* link drawer  */}
+            <div
+              id="drawer-right-example"
+              className="fixed top-0 right-0 z-40 h-screen overflow-y-auto transition-transform translate-x-full bg-white w-80"
+              tabIndex={-1}
+              aria-labelledby="drawer-right-label"
+            >
+              <div>
+                <img
+                  className="p-5"
+                  src="https://modernize-angular-main.netlify.app/assets/images/logos/dark-logo.svg"
+                  alt=""
+                />
+                {/* close btn  */}
+                <button
+                  type="button"
+                  data-drawer-hide="drawer-right-example"
+                  aria-controls="drawer-right-example"
+                  className="hover:bg-gray-200 text-gray-900 text-sm w-12 h-12 rounded-full absolute top-2.5 end-2.5 inline-flex items-center justify-center"
+                >
+                  <svg
+                    className="w-2.5 h-2.5"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                    />
+                  </svg>
+                  <span className="sr-only">Close menu</span>
+                </button>
+              </div>
+              <div className="px-6 font-san">
+                <ul>
+                  <li className="">
+                    <button
+                      onClick={handleIsOpen}
+                      className="flex items-center justify-between w-full text-base font-semibold text-black/70 pt-4 pb-3"
+                    >
+                      Apps
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className={`w-[13px] h-[13px] stroke-2 stroke-black duration-300 ${
+                          isOpen && "rotate-180"
+                        }`}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                        />
+                      </svg>
+                    </button>
+                    {isOpen && (
+                      <div className="pb-4">
+                        <ul>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div>
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Chat Application
+                                </h5>
+                                <span className="text-xs">
+                                  Messages & Emails
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text-[#2A3547]">
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Chat Application
+                                </h5>
+                                <span className="text-xs">
+                                  Messages & Emails
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text-[#2A3547]">
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Chat Application
+                                </h5>
+                                <span className="text-xs">
+                                  Messages & Emails
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text-[#2A3547]">
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Chat Application
+                                </h5>
+                                <span className="text-xs">
+                                  Messages & Emails
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text-[#2A3547]">
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Chat Application
+                                </h5>
+                                <span className="text-xs">
+                                  Messages & Emails
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text-[#2A3547]">
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Chat Application
+                                </h5>
+                                <span className="text-xs">
+                                  Messages & Emails
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text-[#2A3547]">
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Chat Application
+                                </h5>
+                                <span className="text-xs">
+                                  Messages & Emails
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li className="mb-6">
+                            <a href="#" className="flex items-center gap-4">
+                              <div className="w-10 h-10 bg-[#ecf2ff] rounded-md flex items-center justify-center">
+                                <img
+                                  src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-dd-chat.svg"
+                                  alt=""
+                                />
+                              </div>
+                              <div className="text-[#2A3547]">
+                                <h5 className="text-sm font-semibold hover:text-blue-500">
+                                  Chat Application
+                                </h5>
+                                <span className="text-xs">
+                                  Messages & Emails
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                        <div className="font-san text-[#2a3547] font-semibold">
+                          <h3 className="font-san font-semibold text-lg text-[#2a3547] mb-4">Quick Links</h3>
+                          <ul>
+                            <li className="py-2 hover:text-[#5d87ff]">
+                              <a href="#" className="text-sm block">Pricing Page</a>
+                            </li>
+                            <li className="py-2 hover:text-[#5d87ff]">
+                              <a href="#" className="text-sm block">Pricing Page</a>
+                            </li>
+                            <li className="py-2 hover:text-[#5d87ff]">
+                              <a href="#" className="text-sm block">Pricing Page</a>
+                            </li>
+                            <li className="py-2 hover:text-[#5d87ff]">
+                              <a href="#" className="text-sm block">Pricing Page</a>
+                            </li>
+                            <li className="py-2 hover:text-[#5d87ff]">
+                              <a href="#" className="text-sm block">Pricing Page</a>
+                            </li>
+                            <li className="py-2 hover:text-[#5d87ff]">
+                              <a href="#" className="text-sm block">Pricing Page</a>
+                            </li>
+                            <li className="py-2 hover:text-[#5d87ff]">
+                              <a href="#" className="text-sm block">Pricing Page</a>
+                            </li>
+                            <li className="py-2 hover:text-[#5d87ff]">
+                              <a href="#" className="text-sm block">Pricing Page</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    )}
+                  </li>
+                  <li>
+                    <a href="#" className="block text-base font-semibold text-black/70 py-3">Calendar</a>
+                  </li>
+                  <li>
+                    <a href="#" className="block text-base font-semibold text-black/70 py-3">Chat</a>
+                  </li>
+                  <li>
+                    <a href="#" className="block text-base font-semibold text-black/70 py-3">Email</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
             {/* language  */}
             <button
               id="dropdownOffsetButton"

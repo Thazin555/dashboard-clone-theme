@@ -1,9 +1,9 @@
 import React from 'react'
 import Container from './Container'
 
-const HomeMainSection = () => {
+const HomeMainSection = ({menu}) => {
   return (
-    <Container>HomeMainSection</Container>
+    <Container menu={menu}>HomeMainSection</Container>
   )
 }
 

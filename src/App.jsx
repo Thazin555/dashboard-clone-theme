@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from "./Pages/Home";
-import DropdownTest from "./Components/DropdownTest";
 
 const App = () => {
+  const [menu, setMenu] = useState(false);
+  const handleMenu = () => {
+    setMenu(!menu);
+    // console.log(menu)
+  };
   return (
     <div>
-      <Home />
-      {/* <DropdownTest /> */}
+      <Home menu={menu} handleMenu={handleMenu} />
     </div>
   );
 };
