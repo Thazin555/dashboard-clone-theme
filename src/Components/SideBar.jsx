@@ -323,6 +323,7 @@ const SideBar = ({ menu }) => {
         </div>
       </aside>
 
+      {/* md & mobile device  */}
       {menu && (
         <aside
           className={`fixed block xl:hidden  w-[270px] h-screen  border border-gray-300 bg-white`}
@@ -330,14 +331,18 @@ const SideBar = ({ menu }) => {
           <div className={`flex flex-col h-screen ${menu && "w-[270px]"}`}>
             {/* header  */}
             <div className="p-5">
-              {menu ? (
+              {/* {menu ? (
                 <img src={Logo} alt="" />
               ) : (
                 <img
                   src="https://modernize-angular-main.netlify.app/assets/images/logos/dark-logo.svg"
                   alt=""
                 />
-              )}
+              )} */}
+              <img
+                src="https://modernize-angular-main.netlify.app/assets/images/logos/dark-logo.svg"
+                alt=""
+              />
             </div>
             {/* body  */}
             <div className={`px-6 flex flex-col flex-grow overflow-y-auto`}>
