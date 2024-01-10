@@ -6,7 +6,7 @@ import ProjectChart from "./ProjectChart";
 
 const EmployeeSalary = () => {
   return (
-    <div className="block lg:grid grid-cols-12 gap-5 ">
+    <div className="block lg:grid grid-cols-12 gap-5 my-5">
       <div className="col-span-12 lg:col-span-4 md:mb-3">
         <div className="w-full border rounded-md  px-5 py-7">
         <h1 className="text-xl text-gray-600 font-semibold">Employee Salary</h1>
