@@ -1,15 +1,24 @@
-import React from 'react'
-import Container from './Container'
+
+import Container from "./Container";
+import Weekly from "./Weekly";
+import SideApexChart from "./SideApexChart";
+
 import HomeStatus from './HomeStatus'
 import HomeUpperPart from './HomeUpperPart'
 
 const HomeMainSection = () => {
   return (
     <Container>
-        <HomeStatus/>
+      <HomeStatus />
         <HomeUpperPart/>
-    </Container>
-  )
-}
+      
 
-export default HomeMainSection
+      <SideApexChart />
+      <Weekly />
+    </Container>
+  );
+};
+
+  
+
+export default HomeMainSection;

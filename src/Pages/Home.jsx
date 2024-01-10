@@ -4,7 +4,7 @@ import HomeMainSection from '../Components/HomeMainSection'
 const Home = () => {
   return (
     <div>
-      <HomeMainSection/>
+      <HomeMainSection />
     </div>
   )
 }
