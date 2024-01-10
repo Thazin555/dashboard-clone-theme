@@ -3,7 +3,7 @@ import React from "react";
 
 const Weekly = () => {
   return (
-    <div className="">
+    <div className="mt-10">
       <div className="grid gap-14 md:gap-10 lg:gap-10 md:grid-cols-12 lg:grid-cols-12 ">
         {/* grid 1 */}
         <div          className="col-span-6   md:col-span-4 lg:col-span-4 border
