@@ -18,8 +18,6 @@ const HomeMainSection = ({menu}) => {
 
       {/* <BasicTable/> */}
     
-
-
       <HomeStatus />
         <HomeUpperPart/>
       <SideApexChart />

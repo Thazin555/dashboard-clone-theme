@@ -1,8 +1,11 @@
-// import React from "react";
 import "flowbite";
 
 import React, { useState } from "react";
 import Home from "./Pages/Home";
+import BasicTable from "./Pages/BasicTable";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import { Route, Routes } from "react-router-dom";
 const App = () => {
   const [menu, setMenu] = useState(false);
   const handleMenu = () => {
@@ -10,9 +13,12 @@ const App = () => {
     // console.log(menu)
   };
   return (
-    <div>
-      <Home  menu={menu} handleMenu={handleMenu} />
-    </div>
+    <Routes>
+      <Route path="/dashboard" element={<Home menu={menu} handleMenu={handleMenu} />}></Route>
+      <Route path="/tables" element={<BasicTable menu={menu} handleMenu={handleMenu} />}></Route>
+      <Route path="/" element={<Login />}></Route>
+      <Route path="/register" element={<Register />}></Route>
+    </Routes>
   );
 };
 

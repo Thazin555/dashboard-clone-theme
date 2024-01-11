@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SlideRegister = () => {
   return (
@@ -24,7 +25,9 @@ const SlideRegister = () => {
         </div>
         {/* grid 2  */}
         <div className="col-span-3 px-10 md:col-span-1 lg:col-span-1">
-          <h1 className="text-2xl font-bold block text-nowrap">Welcome to Modernize</h1>
+          <h1 className="text-2xl font-bold block text-nowrap">
+            Welcome to Modernize
+          </h1>
           <p className="mb-9 text-slate-700">Your Admin Dashboard</p>
           <div className="flex-row lg:flex md:flex gap-6 mb-5">
             <div className="flex items-center gap-3 sm:mb-3 lg:mb-0 hover:bg-gray-100 duration-300 justify-center rounded-md border px-3">
@@ -89,13 +92,15 @@ const SlideRegister = () => {
                 className="block w-full p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 "
               />
             </div>
-            <button
-              type="submit"
-              className="text-white mt-3 text-sm w-full bg-gray-200  focus:ring-4 focus:outline-none
+            <Link to="/dashboard">
+              <button
+                type="submit"
+                className="text-white mt-3 text-sm w-full bg-gray-200  focus:ring-4 focus:outline-none
      font-normal rounded-lg  px-5 py-2.5 text-center "
-            >
-              Sign Up
-            </button>
+              >
+                Sign Up
+              </button>
+            </Link>
             <div className="mt-5 text-sm">
               <label
                 htmlFor="terms"
