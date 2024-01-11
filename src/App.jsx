@@ -1,11 +1,11 @@
-import "flowbite";
-
 import React, { useState } from "react";
 import Home from "./Pages/Home";
 import BasicTable from "./Pages/BasicTable";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import { Route, Routes } from "react-router-dom";
+import Form from './Pages/Form'
+import "flowbite";
 const App = () => {
   const [menu, setMenu] = useState(false);
   const handleMenu = () => {
