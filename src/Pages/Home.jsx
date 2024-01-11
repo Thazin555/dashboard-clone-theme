@@ -8,7 +8,7 @@ const Home = ({ menu, handleMenu }) => {
     <div>
       <SideBar menu={menu} />
       <NavBar handleMenu={handleMenu} menu={menu} />
-      <HomeMainSection menu={menu} />
+      <HomeMainSection  menu={menu} />
     </div>
   );
 };
