@@ -9,6 +9,7 @@ import AnalyticalLogo from "../img/analytical.svg";
 import AnalyticalLight from "../img/analytical_light.svg";
 import FormLogo from "../img/form.svg";
 import FormLight from "../img/form_light.svg";
+import { Link } from "react-router-dom";
 
 const SideBar = ({ menu }) => {
   // console.log(menu);
@@ -81,8 +82,7 @@ const SideBar = ({ menu }) => {
               </span>
               <ul>
                 <li className="xl:block lg:hidden">
-                  <a
-                    href="#"
+                  <Link to="/dashboard"
                     onClick={() => handleItemClick("app")}
                     className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-200 ${
                       menu ? "gap-8 group-hover:gap-[14px] w-14 -ms-[10px] ps-[18px] group-hover:w-full" : "gap-[14px]"
@@ -97,16 +97,16 @@ const SideBar = ({ menu }) => {
                       <img className="w-5 h-5" src={AnalyticalLogo} alt="" />
                     )}
                     Analytical
-                  </a>
+                  </Link>
                 </li>
                 <li className="xl:hidden lg:block">
-                  <a
-                    href="#"
+                  <Link
+                    to="/dashboard"
                     onClick={() => handleItemClick("app")}
                     className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-200 `}
                   >
                     <img className="w-7 h-7" src={AnalyticalLogo} alt="" />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -198,9 +198,9 @@ const SideBar = ({ menu }) => {
                   {tableOpen && (
                     <ul>
                       <li className="xl:block lg:hidden">
-                        <a
+                        <Link 
+                          to="/tables"
                           onClick={() => handleItemClick("table")}
-                          href="#"
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
                             menu
                               ? "gap-8 px-4 group-hover:gap-4"
@@ -213,16 +213,16 @@ const SideBar = ({ menu }) => {
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
                           Basic Table
-                        </a>
+                        </Link>
                       </li>
                       <li className="xl:hidden lg:block">
-                        <a
-                          href=""
+                        <Link
+                          to="/tables"
                           className={`flex items-center py-3 hover:bg-gray-100 rounded-md duration-300 gap-5 px-2.5`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   )}
@@ -298,8 +298,8 @@ const SideBar = ({ menu }) => {
                   {loginOpen && (
                     <ul>
                       <li className="xl:block lg:hidden">
-                        <a
-                          href="#"
+                        <Link
+                          to="/"
                           onClick={() => handleItemClick("login")}
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
                             menu
@@ -313,16 +313,16 @@ const SideBar = ({ menu }) => {
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
                           Side Login
-                        </a>
+                        </Link>
                       </li>
                       <li className="xl:hidden lg:block">
-                        <a
-                          href=""
+                        <Link
+                          to="/"
                           className={`flex justify-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   )}
@@ -392,8 +392,8 @@ const SideBar = ({ menu }) => {
                   {registerOpen && (
                     <ul>
                       <li className="xl:block lg:hidden">
-                        <a
-                          href="#"
+                        <Link
+                          to="/register"
                           onClick={() => handleItemClick("register")}
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
                             menu
@@ -406,17 +406,18 @@ const SideBar = ({ menu }) => {
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
-                          Side Login
-                        </a>
+                          Side Register
+                        </Link>
                       </li>
                       <li className="xl:hidden lg:block">
-                        <a
+                        <Link
+                          to="/register"
                           href=""
                           className={`flex justify-center py-3 hover:bg-gray-100 rounded-md duration-300`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   )}
@@ -492,8 +493,8 @@ const SideBar = ({ menu }) => {
                 </span>
                 <ul>
                   <li>
-                    <a
-                      href=""
+                    <Link
+                      to="/dashboard"
                       className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 gap-[14px]`}
                     >
                       {/* <svg
@@ -512,7 +513,7 @@ const SideBar = ({ menu }) => {
                       </svg> */}
                       <img className="w-5 h-5" src={AnalyticalLogo} alt="" />
                       Analytical
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -573,14 +574,14 @@ const SideBar = ({ menu }) => {
                     {tableOpen && (
                       <ul>
                         <li>
-                          <a
-                            href=""
+                          <Link
+                            to="/tables"
                             className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 gap-5 px-2.5`}
                           >
                             {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                             <Circle size={11} />
                             Basic Table
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     )}
@@ -636,14 +637,14 @@ const SideBar = ({ menu }) => {
                     {loginOpen && (
                       <ul>
                         <li>
-                          <a
-                            href=""
+                          <Link
+                            to="/"
                             className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 gap-5 px-3.5`}
                           >
                             {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                             <Circle size={11} />
                             Side Login
-                          </a>
+                          </Link>
                         </li>
                       </ul>
                     )}
@@ -693,14 +694,14 @@ const SideBar = ({ menu }) => {
                     {registerOpen && (
                       <ul>
                         <li>
-                          <a
-                            href=""
+                          <Link
+                            to="/register"
                             className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 gap-5 px-3.5`}
                           >
                             {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                             <Circle size={11} />
-                            Side Login
-                          </a>
+                            Side Register
+                          </Link>
                         </li>
                       </ul>
                     )}
