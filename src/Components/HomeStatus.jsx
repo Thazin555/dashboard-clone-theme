@@ -5,7 +5,7 @@ const HomeStatus = () => {
     <div className=" grid grid-cols-12 gap-[30px] mb-[30px] font-semibold">
       <div className=" lg:col-span-2 md:col-span-4 col-span-6 text-center p-[32px] bg-[#ecf2ff] ">
         <img
-          src="src/img/icon-user-male.svg"
+          src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-user-male.svg"
           className=" mx-auto w-[40px]"
           alt=""
         />
@@ -14,7 +14,7 @@ const HomeStatus = () => {
       </div>
       <div className=" lg:col-span-2 md:col-span-4 col-span-6 text-center p-[32px] bg-[#fef5e5] ">
         <img
-          src="src/img/icon-briefcase.svg"
+          src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-briefcase.svg"
           className=" mx-auto w-[40px]"
           alt=""
         />
@@ -23,7 +23,7 @@ const HomeStatus = () => {
       </div>
       <div className=" lg:col-span-2 md:col-span-4 col-span-6 text-center p-[32px] bg-[#e8f7ff] ">
         <img
-          src="src/img/icon-mailbox.svg"
+          src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-mailbox.svg"
           className=" mx-auto w-[40px]"
           alt=""
         />
@@ -32,7 +32,7 @@ const HomeStatus = () => {
       </div>
       <div className=" lg:col-span-2 md:col-span-4 col-span-6 text-center p-[32px] bg-[#fdede8] ">
         <img
-          src="src/img/icon-favorites.svg"
+          src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-favorites.svg"
           className=" mx-auto w-[40px]"
           alt=""
         />
@@ -41,7 +41,7 @@ const HomeStatus = () => {
       </div>
       <div className=" lg:col-span-2 md:col-span-4 col-span-6 text-center p-[32px] bg-[#e6fffa] ">
         <img
-          src="src/img/icon-speech-bubble.svg"
+          src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-speech-bubble.svg"
           className=" mx-auto w-[40px]"
           alt=""
         />
@@ -50,7 +50,7 @@ const HomeStatus = () => {
       </div>
       <div className=" lg:col-span-2 md:col-span-4 col-span-6 text-center p-[32px] bg-[#e8f7ff] ">
         <img
-          src="src/img/icon-connect.svg"
+          src="https://modernize-angular-main.netlify.app/assets/images/svgs/icon-connect.svg"
           className=" mx-auto w-[40px]"
           alt=""
         />
