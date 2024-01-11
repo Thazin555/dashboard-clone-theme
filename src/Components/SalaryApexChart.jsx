@@ -18,6 +18,9 @@ class SalaryApexChart extends React.Component {
           toolbar: {
             show: false // Hide the toolbar
           },
+          sparkline: {
+            enabled: true,
+          },
           height: 350,
           type: "bar",
           events: {
@@ -107,7 +110,7 @@ class SalaryApexChart extends React.Component {
 
   render() {
     return (
-      <div id="chart">
+      <div >
         <ReactApexChart
           options={this.state.options}
           series={this.state.series}
