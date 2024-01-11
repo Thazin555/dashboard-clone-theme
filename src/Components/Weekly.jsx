@@ -4,9 +4,10 @@ import SideApexChart from "./SideApexChart";
 const Weekly = () => {
   return (
     <div className="">
-      <div className="block md:grid overflow-scroll gap-14 md:gap-10 lg:gap-10 md:grid-cols-12 lg:grid-cols-12 ">
+      <div className="block md:grid overflow-scroll gap-14 md:gap-10 lg:gap-10 md:grid-cols-12 lg:grid-cols-12">
         {/* grid 1 */}
         <div
+
           className="block   md:col-span-4 lg:col-span-4 border
            border-slate-200 px-4 shadow-md "
         >
