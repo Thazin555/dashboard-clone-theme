@@ -78,7 +78,7 @@ const NavBar = ({ handleMenu, menu }) => {
           {/* left side  */}
           <div className="h-full flex items-center">
             <button
-              className="w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-400"
+              className="w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-100"
               onClick={handleMenu}
             >
               <List size={20} />
@@ -86,7 +86,7 @@ const NavBar = ({ handleMenu, menu }) => {
             <button
               data-modal-target="default-modal"
               data-modal-toggle="default-modal"
-              className="w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-400"
+              className="w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-100"
             >
               <MagnifyingGlass size={20} />
             </button>
@@ -94,7 +94,7 @@ const NavBar = ({ handleMenu, menu }) => {
               <ul className="xl:flex gap-1 font-san text-sm md:hidden hidden">
                 <li
                   ref={dropdownRef}
-                  className="px-2 py-1.5 rounded-lg hover:bg-gray-200"
+                  className="px-2 py-1.5 rounded-lg hover:bg-gray-100"
                 >
                   <button
                     className="flex gap-1 items-center"
@@ -324,13 +324,13 @@ const NavBar = ({ handleMenu, menu }) => {
                     </div>
                   )}
                 </li>
-                <li className="px-3 py-1.5 rounded-lg hover:bg-gray-200">
+                <li className="px-3 py-1.5 rounded-lg hover:bg-gray-100">
                   <a href="">Chat</a>
                 </li>
-                <li className="px-2 py-1.5 rounded-lg hover:bg-gray-200">
+                <li className="px-2 py-1.5 rounded-lg hover:bg-gray-100">
                   <a href="">Calendar</a>
                 </li>
-                <li className="px-3 py-1.5 rounded-lg hover:bg-gray-200">
+                <li className="px-3 py-1.5 rounded-lg hover:bg-gray-100">
                   <a href="">Email</a>
                 </li>
               </ul>
@@ -974,23 +974,23 @@ const NavBar = ({ handleMenu, menu }) => {
                     Quick Page Links
                   </h3>
 
-                  <a href="" className="font-san text-[#2a3547] py-3 block">
+                  <a href="/dashboard" className="font-san text-[#2a3547] py-3 block">
                     <h5 className="text-sm font-semibold">Analytical</h5>
                     <span className="text-xs">/dashboards/dashboard1</span>
                   </a>
-                  <a href="" className="font-san text-[#2a3547] py-3 block">
+                  <a href="/form" className="font-san text-[#2a3547] py-3 block">
                     <h5 className="text-sm font-semibold">Form Wizard</h5>
                     <span className="text-xs">/forms/form-wizard</span>
                   </a>
-                  <a href="" className="font-san text-[#2a3547] py-3 block">
+                  <a href="/tables" className="font-san text-[#2a3547] py-3 block">
                     <h5 className="text-sm font-semibold">Tables</h5>
                     <span className="text-xs">tables</span>
                   </a>
-                  <a href="" className="font-san text-[#2a3547] py-3 block">
+                  <a href="/" className="font-san text-[#2a3547] py-3 block">
                     <h5 className="text-sm font-semibold">Login</h5>
                     <span className="text-xs">/authentication</span>
                   </a>
-                  <a href="" className="font-san text-[#2a3547] py-3 block">
+                  <a href="/register" className="font-san text-[#2a3547] py-3 block">
                     <h5 className="text-sm font-semibold">Register</h5>
                     <span className="text-xs">/authentication</span>
                   </a>

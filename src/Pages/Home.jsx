@@ -6,7 +6,7 @@ import NavBar from "../Components/NavBar";
 const Home = ({ menu, handleMenu }) => {
   return (
     <div>
-      <SideBar menu={menu} />
+      <SideBar menu={menu} handleMenu={handleMenu} />
       <NavBar handleMenu={handleMenu} menu={menu} />
       <HomeMainSection  menu={menu} />
     </div>
