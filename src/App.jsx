@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Home from "./Pages/Home";
+import Test from "./Components/Test";
 
 const App = () => {
   const [menu, setMenu] = useState(false);
@@ -10,6 +11,7 @@ const App = () => {
   return (
     <div>
       <Home menu={menu} handleMenu={handleMenu} />
+      {/* <Test />   */}
     </div>
   );
 };

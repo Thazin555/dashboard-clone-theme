@@ -6,7 +6,9 @@ import Logo from "../img/logo.svg";
 import TableLogo from "../img/table.svg";
 import RegisterLogo from "../img/register.svg";
 import AnalyticalLogo from "../img/analytical.svg";
+import AnalyticalLight from "../img/analytical_light.svg";
 import FormLogo from "../img/form.svg";
+import FormLight from "../img/form_light.svg";
 
 const SideBar = ({ menu }) => {
   // console.log(menu);
@@ -29,6 +31,12 @@ const SideBar = ({ menu }) => {
   // const handleClick = () => {
   //   setIsActive(!isActive);
   // };
+
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleItemClick = (item) => {
+    setSelectedItem(item === selectedItem ? null : item);
+  };
 
   return (
     <div className="group">
@@ -75,32 +83,27 @@ const SideBar = ({ menu }) => {
                 <li className="xl:block lg:hidden">
                   <a
                     href="#"
-                    className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 bg-blue-400 ${
-                      menu ? "gap-7 group-hover:gap-[14px]" : "gap-[14px]"
+                    onClick={() => handleItemClick("app")}
+                    className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-200 ${
+                      menu ? "gap-8 group-hover:gap-[14px] w-14 -ms-[10px] ps-[18px] group-hover:w-full" : "gap-[14px]"
+                    } ${
+                      selectedItem === "app" &&
+                      "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
                     }`}
                   >
-                    {/* <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-5 h-5"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
-                      />
-                    </svg> */}
-                    <img className="w-5 h-5" src={AnalyticalLogo} alt="" />
+                    {selectedItem === "app" ? (
+                      <img className="w-5 h-5" src={AnalyticalLight} alt="" />
+                    ) : (
+                      <img className="w-5 h-5" src={AnalyticalLogo} alt="" />
+                    )}
                     Analytical
                   </a>
                 </li>
                 <li className="xl:hidden lg:block">
                   <a
                     href="#"
-                    className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-300 bg-blue-400`}
+                    onClick={() => handleItemClick("app")}
+                    className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-200 `}
                   >
                     <img className="w-7 h-7" src={AnalyticalLogo} alt="" />
                   </a>
@@ -114,12 +117,28 @@ const SideBar = ({ menu }) => {
               <ul>
                 <li className="xl:block lg:hidden">
                   <a
+                    onClick={() => handleItemClick("form")}
                     href="#"
-                    className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 ${
+                    className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-200 ${
                       menu ? "gap-7 group-hover:gap-[14px]" : "gap-[14px]"
+                    } ${
+                      selectedItem === "form" &&
+                      "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
                     }`}
                   >
-                    <img className="w-[22px] h-[22px]" src={FormLogo} alt="" />
+                    {selectedItem === "form" ? (
+                      <img
+                        className="w-[22px] h-[22px]"
+                        src={FormLight}
+                        alt=""
+                      />
+                    ) : (
+                      <img
+                        className="w-[22px] h-[22px]"
+                        src={FormLogo}
+                        alt=""
+                      />
+                    )}
                     {/* <Files size={20} /> */}
                     Form Wizard
                   </a>
@@ -127,7 +146,7 @@ const SideBar = ({ menu }) => {
                 <li className="xl:hidden lg:block">
                   <a
                     href="#"
-                    className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-300`}
+                    className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-200`}
                   >
                     {/* <Files size={20} /> */}
                     <img className="w-[22px] h-[22px]" src={FormLogo} alt="" />
@@ -180,11 +199,15 @@ const SideBar = ({ menu }) => {
                     <ul>
                       <li className="xl:block lg:hidden">
                         <a
-                          href=""
-                          className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 ${
+                          onClick={() => handleItemClick("table")}
+                          href="#"
+                          className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
                             menu
                               ? "gap-8 px-4 group-hover:gap-4"
                               : "gap-5 px-2.5"
+                          } ${
+                            selectedItem === "table" &&
+                            "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
                           }`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
@@ -276,11 +299,15 @@ const SideBar = ({ menu }) => {
                     <ul>
                       <li className="xl:block lg:hidden">
                         <a
-                          href=""
-                          className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 ${
+                          href="#"
+                          onClick={() => handleItemClick("login")}
+                          className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
                             menu
                               ? "gap-8 px-4 group-hover:gap-4"
                               : "gap-5 px-3.5"
+                          } ${
+                            selectedItem === "login" &&
+                            "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
                           }`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
@@ -366,11 +393,15 @@ const SideBar = ({ menu }) => {
                     <ul>
                       <li className="xl:block lg:hidden">
                         <a
-                          href=""
-                          className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 ${
+                          href="#"
+                          onClick={() => handleItemClick("register")}
+                          className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
                             menu
                               ? "gap-8 px-4 group-hover:gap-4"
                               : "gap-5 px-3.5"
+                          } ${
+                            selectedItem === "register" &&
+                            "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
                           }`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
@@ -463,7 +494,7 @@ const SideBar = ({ menu }) => {
                   <li>
                     <a
                       href=""
-                      className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 bg-blue-400 gap-[14px]`}
+                      className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 gap-[14px]`}
                     >
                       {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -492,11 +523,15 @@ const SideBar = ({ menu }) => {
                 <ul>
                   <li>
                     <a
-                      href="#"
+                      href=""
                       className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 gap-[14px]`}
                     >
                       {/* <Files size={20} /> */}
-                      <img className="w-[22px] h-[22px]" src={FormLogo} alt="" />
+                      <img
+                        className="w-[22px] h-[22px]"
+                        src={FormLogo}
+                        alt=""
+                      />
                       Form Wizard
                     </a>
                   </li>
