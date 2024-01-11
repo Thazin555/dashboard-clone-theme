@@ -1,6 +1,6 @@
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Circle, Files, Table } from "@phosphor-icons/react";
+import { Aperture, Circle, Files, Table } from "@phosphor-icons/react";
 import React, { useState } from "react";
 import Logo from "../img/logo.svg";
 import TableLogo from "../img/table.svg";
@@ -9,9 +9,9 @@ import AnalyticalLogo from "../img/analytical.svg";
 import AnalyticalLight from "../img/analytical_light.svg";
 import FormLogo from "../img/form.svg";
 import FormLight from "../img/form_light.svg";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-const SideBar = ({ menu }) => {
+const SideBar = ({ menu, handleMenu }) => {
   // console.log(menu);
   const [tableOpen, setTableOpen] = useState(false);
   const handleTable = () => {
@@ -28,16 +28,14 @@ const SideBar = ({ menu }) => {
     setRegisterOpen(!registerOpen);
   };
 
-  // const [isActive, setIsActive] = useState(true);
-  // const handleClick = () => {
-  //   setIsActive(!isActive);
-  // };
-
-  const [selectedItem, setSelectedItem] = useState(null);
-
-  const handleItemClick = (item) => {
-    setSelectedItem(item === selectedItem ? null : item);
+  const navListStyle = ({ isActive }) => {
+    return {
+      color: isActive ? "#fff" : "#2A3547",
+      backgroundColor: isActive ? "#5d87ff" : "#fff",
+      // stroke: isActive ? "white" : "red"
+    };
   };
+
 
   return (
     <div className="group">
@@ -55,111 +53,123 @@ const SideBar = ({ menu }) => {
           {/* header  */}
           <div className="p-5">
             {menu ? (
-              <img src={Logo} alt="" />
+              <a href="">
+                <img src={Logo} alt="" />
+              </a>
             ) : (
               <>
-                <span className="xl:block lg:hidden">
+                <a href="" className="xl:block lg:hidden">
                   <img
                     src="https://modernize-angular-main.netlify.app/assets/images/logos/dark-logo.svg"
                     alt=""
                   />
-                </span>
-                <span className="xl:hidden lg:block">
+                </a>
+                <a href="" className="xl:hidden lg:block">
                   <img src={Logo} alt="" />
-                </span>
+                </a>
               </>
             )}
           </div>
           {/* body  */}
           <div
-            className={`px-6 flex flex-col flex-grow overflow-y-auto ${
+            className={`xl:px-6 lg:px-3 flex flex-col flex-grow overflow-y-auto ${
               menu && "overflow-y-visible ps-5"
             }`}
           >
             <div>
-              <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block">
+              <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block xl:text-left text-center">
                 Home
               </span>
               <ul>
                 <li className="xl:block lg:hidden">
-                  <Link
+                  <NavLink
                     to="/dashboard"
-                    onClick={() => handleItemClick("app")}
-                    className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-200 ${
+                    style={navListStyle}
+                    className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 active:bg-gray-200 rounded-md duration-200 ${
                       menu
                         ? "gap-8 group-hover:gap-[14px] w-14 -ms-[10px] ps-[18px] group-hover:w-full"
                         : "gap-[14px]"
-                    } ${
-                      selectedItem === "app" &&
-                      "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
-                    }`}
+                    } `}
                   >
-                    {selectedItem === "app" ? (
-                      <img className="w-5 h-5" src={AnalyticalLight} alt="" />
-                    ) : (
-                      <img className="w-5 h-5" src={AnalyticalLogo} alt="" />
-                    )}
+                    <div>
+                      <Aperture size={21} />
+                    </div>
                     Analytical
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="xl:hidden lg:block">
-                  <Link
+                  <NavLink
                     to="/dashboard"
-                    onClick={() => handleItemClick("app")}
+                    style={navListStyle}
                     className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-200 `}
                   >
-                    <img className="w-7 h-7" src={AnalyticalLogo} alt="" />
-                  </Link>
+                    <Aperture size={21} />
+                  </NavLink>
                 </li>
               </ul>
             </div>
             <div>
-              <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block">
+              <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block xl:text-left text-center">
                 Forms
               </span>
               <ul>
                 <li className="xl:block lg:hidden">
-                  <Link
+                  <NavLink
                     to="/form"
-                    onClick={() => handleItemClick("form")}
+                    style={navListStyle}
                     href="#"
                     className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-200 ${
-                      menu ? "gap-7 group-hover:gap-[14px]" : "gap-[14px]"
-                    } ${
-                      selectedItem === "form" &&
-                      "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
-                    }`}
+                      menu
+                        ? "gap-7 group-hover:gap-[14px] w-14 h-10 -ms-[10px] ps-[18px] text-nowrap group-hover:w-full"
+                        : "gap-[14px]"
+                    } `}
                   >
-                    {selectedItem === "form" ? (
-                      <img
+                    <div>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
                         className="w-[22px] h-[22px]"
-                        src={FormLight}
-                        alt=""
-                      />
-                    ) : (
-                      <img
-                        className="w-[22px] h-[22px]"
-                        src={FormLogo}
-                        alt=""
-                      />
-                    )}
-                    {/* <Files size={20} /> */}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75"
+                        />
+                      </svg>
+                    </div>
                     Form Wizard
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="xl:hidden lg:block">
-                  <Link
+                  <NavLink
                     to="/form"
+                    style={navListStyle}
                     className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-200`}
                   >
-                    {/* <Files size={20} /> */}
-                    <img className="w-[22px] h-[22px]" src={FormLogo} alt="" />
-                  </Link>
+                    {/* <img className="w-[20px] h-[20px]" src={FormLogo} alt="" /> */}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z"
+                      />
+                    </svg>
+                  </NavLink>
                 </li>
               </ul>
             </div>
             <div>
-              <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block">
+              <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block text-center xl:text-left">
                 Tables
               </span>
               <ul>
@@ -171,7 +181,7 @@ const SideBar = ({ menu }) => {
                     onClick={handleTable}
                   >
                     {/* <Table size={20} /> */}
-                    <img className="w-5 h-5" src={TableLogo} alt="" />
+                    <img className="w-4 h-4" src={TableLogo} alt="" />
                     <span className="flex items-center flex-grow justify-between select-none">
                       Tables
                       <svg
@@ -197,36 +207,36 @@ const SideBar = ({ menu }) => {
                     onClick={handleTable}
                   >
                     {/* <Table size={20} /> */}
-                    <img className="w-5 h-5" src={TableLogo} alt="" />
+                    <img className="w-4 h-4" src={TableLogo} alt="" />
                   </div>
                   {tableOpen && (
                     <ul>
                       <li className="xl:block lg:hidden">
-                        <Link
+                        <NavLink
                           to="/tables"
-                          onClick={() => handleItemClick("table")}
+                          style={navListStyle}
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
                             menu
-                              ? "gap-8 px-4 group-hover:gap-4"
+                              ? "gap-7 px-4 w-14 h-10 -ms-[10px] ps-[22px] group-hover:w-full"
                               : "gap-5 px-2.5"
-                          } ${
-                            selectedItem === "table" &&
-                            "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
                           }`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
-                          <Circle size={11} />
+                          <div>
+                            <Circle size={11} />
+                          </div>
                           Basic Table
-                        </Link>
+                        </NavLink>
                       </li>
                       <li className="xl:hidden lg:block">
-                        <Link
+                        <NavLink
                           to="/tables"
-                          className={`flex items-center py-3 hover:bg-gray-100 rounded-md duration-300 gap-5 px-2.5`}
+                          style={navListStyle}
+                          className={`flex items-center py-3.5 hover:bg-gray-100 rounded-md duration-300 gap-5 px-5`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
-                        </Link>
+                        </NavLink>
                       </li>
                     </ul>
                   )}
@@ -234,7 +244,7 @@ const SideBar = ({ menu }) => {
               </ul>
             </div>
             <div>
-              <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block">
+              <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block xl:text-left text-center">
                 Auth
               </span>
               <ul>
@@ -251,7 +261,7 @@ const SideBar = ({ menu }) => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-6 h-6"
+                      className="w-[22px] h-[22px]"
                     >
                       <path
                         strokeLinecap="round"
@@ -290,7 +300,7 @@ const SideBar = ({ menu }) => {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="w-6 h-6"
+                      className="w-[22px] h-[22px]"
                     >
                       <path
                         strokeLinecap="round"
@@ -302,31 +312,29 @@ const SideBar = ({ menu }) => {
                   {loginOpen && (
                     <ul>
                       <li className="xl:block lg:hidden">
-                        <Link
+                        <NavLink
                           to="/"
-                          onClick={() => handleItemClick("login")}
+                          style={navListStyle}
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
                             menu
                               ? "gap-8 px-4 group-hover:gap-4"
                               : "gap-5 px-3.5"
-                          } ${
-                            selectedItem === "login" &&
-                            "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
                           }`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
                           Side Login
-                        </Link>
+                        </NavLink>
                       </li>
                       <li className="xl:hidden lg:block">
-                        <Link
+                        <NavLink
                           to="/"
+                          style={navListStyle}
                           className={`flex justify-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
-                        </Link>
+                        </NavLink>
                       </li>
                     </ul>
                   )}
@@ -352,7 +360,11 @@ const SideBar = ({ menu }) => {
                         d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"
                       />
                     </svg> */}
-                    <img className="w-5 h-5" src={RegisterLogo} alt="" />
+                    <img
+                      className="w-[18px] h-[18px]"
+                      src={RegisterLogo}
+                      alt=""
+                    />
 
                     <span className="flex items-center flex-grow justify-between select-none">
                       Register
@@ -378,50 +390,39 @@ const SideBar = ({ menu }) => {
                     className={`xl:hidden lg:flex justify-center py-3 hover:bg-gray-100 rounded-md duration-300 cursor-pointer active:bg-gray-300 active:duration-200`}
                     onClick={handleRegister}
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      strokeWidth={1.5}
-                      stroke="currentColor"
-                      className="w-6 h-6"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"
-                      />
-                    </svg>
+                    <img
+                      className="w-[18px] h-[18px]"
+                      src={RegisterLogo}
+                      alt=""
+                    />
                   </div>
                   {registerOpen && (
                     <ul>
                       <li className="xl:block lg:hidden">
-                        <Link
+                        <NavLink
                           to="/register"
-                          onClick={() => handleItemClick("register")}
+                          style={navListStyle}
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
                             menu
                               ? "gap-8 px-4 group-hover:gap-4"
                               : "gap-5 px-3.5"
-                          } ${
-                            selectedItem === "register" &&
-                            "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
                           }`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
                           Side Register
-                        </Link>
+                        </NavLink>
                       </li>
                       <li className="xl:hidden lg:block">
-                        <Link
+                        <NavLink
                           to="/register"
+                          style={navListStyle}
                           href=""
                           className={`flex justify-center py-3 hover:bg-gray-100 rounded-md duration-300`}
                         >
                           {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                           <Circle size={11} />
-                        </Link>
+                        </NavLink>
                       </li>
                     </ul>
                   )}
@@ -473,7 +474,7 @@ const SideBar = ({ menu }) => {
       {/* md & mobile device  */}
       {menu && (
         <aside
-          className={`fixed block xl:hidden  w-[270px] h-screen  border border-gray-300 bg-white z-50`}
+          className={`fixed block  xl:hidden  w-[270px] h-screen  border border-gray-300 bg-white z-50`}
         >
           <div className={`flex flex-col h-screen ${menu && "w-[270px]"}`}>
             {/* header  */}
@@ -486,10 +487,12 @@ const SideBar = ({ menu }) => {
                   alt=""
                 />
               )} */}
-              <img
-                src="https://modernize-angular-main.netlify.app/assets/images/logos/dark-logo.svg"
-                alt=""
-              />
+              <a href="">
+                <img
+                  src="https://modernize-angular-main.netlify.app/assets/images/logos/dark-logo.svg"
+                  alt=""
+                />
+              </a>
             </div>
             {/* body  */}
             <div className={`px-6 flex flex-col flex-grow overflow-y-auto`}>
@@ -499,11 +502,31 @@ const SideBar = ({ menu }) => {
                 </span>
                 <ul>
                   <li>
-                    <Link
+                    <NavLink
                       to="/dashboard"
+                      style={navListStyle}
+                      onClick={handleMenu}
                       className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 gap-[14px]`}
                     >
-                      {/* <svg
+                      <Aperture size={21} />
+                      Analytical
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block">
+                  Forms
+                </span>
+                <ul>
+                  <li>
+                    <NavLink
+                      style={navListStyle}
+                      to="/form"
+                      onClick={handleMenu}
+                      className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 gap-[14px]`}
+                    >
+                      <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
@@ -514,33 +537,11 @@ const SideBar = ({ menu }) => {
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418"
+                          d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5A3.375 3.375 0 0 0 6.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0 0 15 2.25h-1.5a2.251 2.251 0 0 0-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 0 0-9-9Z"
                         />
-                      </svg> */}
-                      <img className="w-5 h-5" src={AnalyticalLogo} alt="" />
-                      Analytical
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <span className="uppercase font-san text-xs font-bold pt-6 pb-3 block">
-                  Forms
-                </span>
-                <ul>
-                  <li>
-                    <Link
-                      to="/form"
-                      className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 gap-[14px]`}
-                    >
-                      {/* <Files size={20} /> */}
-                      <img
-                        className="w-[22px] h-[22px]"
-                        src={FormLogo}
-                        alt=""
-                      />
+                      </svg>
                       Form Wizard
-                    </Link>
+                    </NavLink>
                   </li>
                 </ul>
               </div>
@@ -556,7 +557,7 @@ const SideBar = ({ menu }) => {
                       onClick={handleTable}
                     >
                       {/* <Table size={20} /> */}
-                      <img className="w-5 h-5" src={TableLogo} alt="" />
+                      <img className="w-4 h-4" src={TableLogo} alt="" />
                       <span className="flex items-center flex-grow justify-between select-none">
                         Tables
                         <svg
@@ -580,14 +581,16 @@ const SideBar = ({ menu }) => {
                     {tableOpen && (
                       <ul>
                         <li>
-                          <Link
+                          <NavLink
+                            style={navListStyle}
                             to="/tables"
+                            onClick={handleMenu}
                             className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 gap-5 px-2.5`}
                           >
                             {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                             <Circle size={11} />
                             Basic Table
-                          </Link>
+                          </NavLink>
                         </li>
                       </ul>
                     )}
@@ -611,7 +614,7 @@ const SideBar = ({ menu }) => {
                         viewBox="0 0 24 24"
                         strokeWidth={1.5}
                         stroke="currentColor"
-                        className="w-6 h-6"
+                        className="w-[22px] h-[22px]"
                       >
                         <path
                           strokeLinecap="round"
@@ -643,14 +646,15 @@ const SideBar = ({ menu }) => {
                     {loginOpen && (
                       <ul>
                         <li>
-                          <Link
+                          <NavLink
+                            style={navListStyle}
                             to="/"
                             className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 gap-5 px-3.5`}
                           >
                             {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                             <Circle size={11} />
                             Side Login
-                          </Link>
+                          </NavLink>
                         </li>
                       </ul>
                     )}
@@ -675,7 +679,11 @@ const SideBar = ({ menu }) => {
                           d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z"
                         />
                       </svg> */}
-                      <img className="w-5 h-5" src={RegisterLogo} alt="" />
+                      <img
+                        className="w-[18px] h-[18px]"
+                        src={RegisterLogo}
+                        alt=""
+                      />
 
                       <span className="flex items-center flex-grow justify-between select-none">
                         Register
@@ -700,14 +708,15 @@ const SideBar = ({ menu }) => {
                     {registerOpen && (
                       <ul>
                         <li>
-                          <Link
+                          <NavLink
+                            style={navListStyle}
                             to="/register"
                             className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-300 gap-5 px-3.5`}
                           >
                             {/* <FontAwesomeIcon className="w-2 h-2" icon={faCircle} /> */}
                             <Circle size={11} />
                             Side Register
-                          </Link>
+                          </NavLink>
                         </li>
                       </ul>
                     )}
