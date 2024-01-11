@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TableHeader = () => {
   return (
     <div className="py-8 relative rounded-md overflow-hidden bg-[#e5f2f9] flex flex-col gap-4 px-7 mb-10">
       <h1 className="text-xl text-gray-600 font-semibold">Basic Table</h1>
       <div className="flex gap-3 items-baseline">
-        <a className="text-gray-700 font-light text-sm cursor-pointer hover:text-blue-400">Dashboard</a>
+        <Link to="/dashboard" className="text-gray-700 font-light text-sm cursor-pointer hover:text-blue-400">Dashboard</Link>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-2 h-2">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path

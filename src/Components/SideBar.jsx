@@ -82,10 +82,13 @@ const SideBar = ({ menu }) => {
               </span>
               <ul>
                 <li className="xl:block lg:hidden">
-                  <Link to="/dashboard"
+                  <Link
+                    to="/dashboard"
                     onClick={() => handleItemClick("app")}
                     className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-200 ${
-                      menu ? "gap-8 group-hover:gap-[14px] w-14 -ms-[10px] ps-[18px] group-hover:w-full" : "gap-[14px]"
+                      menu
+                        ? "gap-8 group-hover:gap-[14px] w-14 -ms-[10px] ps-[18px] group-hover:w-full"
+                        : "gap-[14px]"
                     } ${
                       selectedItem === "app" &&
                       "bg-[#5d87ff] text-white hover:bg-[#5d87ff] hover:text-white"
@@ -116,7 +119,8 @@ const SideBar = ({ menu }) => {
               </span>
               <ul>
                 <li className="xl:block lg:hidden">
-                  <a
+                  <Link
+                    to="/form"
                     onClick={() => handleItemClick("form")}
                     href="#"
                     className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-200 ${
@@ -141,16 +145,16 @@ const SideBar = ({ menu }) => {
                     )}
                     {/* <Files size={20} /> */}
                     Form Wizard
-                  </a>
+                  </Link>
                 </li>
                 <li className="xl:hidden lg:block">
-                  <a
-                    href="#"
+                  <Link
+                    to="/form"
                     className={`py-3 flex justify-center hover:bg-gray-100 rounded-md duration-200`}
                   >
                     {/* <Files size={20} /> */}
                     <img className="w-[22px] h-[22px]" src={FormLogo} alt="" />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -198,7 +202,7 @@ const SideBar = ({ menu }) => {
                   {tableOpen && (
                     <ul>
                       <li className="xl:block lg:hidden">
-                        <Link 
+                        <Link
                           to="/tables"
                           onClick={() => handleItemClick("table")}
                           className={`flex items-center font-san text-sm py-3 hover:bg-gray-100 rounded-md duration-200 ${
@@ -443,22 +447,24 @@ const SideBar = ({ menu }) => {
                   <p>Designer</p>
                 </div>
               </div>
-              <div className="w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-200/50">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-[18px] h-[16px] text-[#5d87ff] stroke-2"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9"
-                  />
-                </svg>
-              </div>
+              <Link to="/">
+                <div className="w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-200/50">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="w-[18px] h-[16px] text-[#5d87ff] stroke-2"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9"
+                    />
+                  </svg>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
@@ -523,8 +529,8 @@ const SideBar = ({ menu }) => {
                 </span>
                 <ul>
                   <li>
-                    <a
-                      href=""
+                    <Link
+                      to="/form"
                       className={`flex items-center font-san text-sm px-2.5 py-3 hover:bg-gray-100 rounded-md duration-300 gap-[14px]`}
                     >
                       {/* <Files size={20} /> */}
@@ -534,7 +540,7 @@ const SideBar = ({ menu }) => {
                         alt=""
                       />
                       Form Wizard
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -723,22 +729,24 @@ const SideBar = ({ menu }) => {
                     <p>Designer</p>
                   </div>
                 </div>
-                <div className="w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-200/50">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    strokeWidth={1.5}
-                    stroke="currentColor"
-                    className="w-[18px] h-[16px] text-[#5d87ff] stroke-2"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9"
-                    />
-                  </svg>
-                </div>
+                <Link to="/">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center hover:bg-gray-200/50">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-[18px] h-[16px] text-[#5d87ff] stroke-2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5.636 5.636a9 9 0 1 0 12.728 0M12 3v9"
+                      />
+                    </svg>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>

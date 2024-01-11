@@ -1,12 +1,16 @@
-import React from 'react'
-import FormMainSection from '../Components/FormMainSection'
+import React from "react";
+import FormMainSection from "../Components/FormMainSection";
+import SideBar from "../Components/SideBar";
+import NavBar from "../Components/NavBar";
 
-const Form = () => {
+const Form = ({ menu, handleMenu }) => {
   return (
     <div>
-        <FormMainSection/>
+      <SideBar menu={menu} />
+      <NavBar handleMenu={handleMenu} menu={menu} />
+      <FormMainSection menu={menu} />
     </div>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;
