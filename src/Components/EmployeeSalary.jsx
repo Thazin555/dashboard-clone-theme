@@ -6,14 +6,14 @@ import ProjectChart from "./ProjectChart";
 
 const EmployeeSalary = () => {
   return (
-    <div className="block lg:grid grid-cols-12 gap-5 my-5">
-      <div className="col-span-12 lg:col-span-4 md:mb-3">
-        <div className="w-full border rounded-md  px-5 py-7">
+    <div className="block lg:grid grid-cols-12 gap-5 my-10">
+      <div className="col-span-12 lg:col-span-4  md:mb-3">
+        <div className="w-full border rounded-md shadow shadow-gray-200 px-5 py-7">
         <h1 className="text-xl text-gray-600 font-semibold">Employee Salary</h1>
         <h3 className="text-gray-500 font-light">Every month</h3>
         <SalaryApexChart />
 
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center mt-5">
           <div className="flex items-center">
             <div className="flex-shrink-0  rounded-md bg-[#e8efff] p-2">
               <a href="#" className="relative block">
@@ -130,7 +130,7 @@ const EmployeeSalary = () => {
       <div className="block w-full lg:col-span-4 ">
         <div className="grid grid-cols-12 gap-5">
           <div className="col-span-6  ">
-            <div className=" border rounded-md">
+            <div className=" border rounded-md  shadow shadow-gray-200">
             <div className="ml-3 pt-7 px-2">
               <p className="text-gray-500 text-base whitespace-no-wrap">
                 Customers
@@ -162,7 +162,7 @@ const EmployeeSalary = () => {
             <CustomerChart/>
           </div>
             </div>
-          <div className="col-span-6 border rounded-md">
+          <div className="col-span-6 border rounded-md  shadow shadow-gray-200">
             <div className="ml-3  pt-7 px-2">
               <p className="text-gray-500 text-base whitespace-no-wrap">
                 Projects
@@ -196,7 +196,7 @@ const EmployeeSalary = () => {
           </div>
         </div>
 
-      <div className="border rounded-md p-5 my-5">
+      <div className="border rounded-md  shadow shadow-gray-200 p-5 my-5">
       <div className="mb-10 ">
           <div className="flex items-center">
             <div className="flex-shrink-0">
@@ -262,13 +262,13 @@ const EmployeeSalary = () => {
       <div className="block  w-full lg:col-span-4">
         <div className="bg-[#5d87ff] rounded-md pt-7 px-5 pb-5">
           <div
-            className="bg-center bg-contain bg-no-repeat flex flex-col gap-40"
+            className="bg-center bg-contain bg-no-repeat "
             style={{
               backgroundImage:
                 'url("https://modernize-angular-main.netlify.app/assets/images/backgrounds/piggy.png")',
             }}
           >
-            <div className="">
+            <div className="mb-44">
               <h1 className="text-xl text-gray-50 font-semibold">
                 Best selling products
               </h1>

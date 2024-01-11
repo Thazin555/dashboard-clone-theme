@@ -22,6 +22,9 @@ class ProjectChart extends React.Component {
               console.log(chart, w, e);
             },
           },
+          sparkline: {
+            enabled: true,
+          },
           toolbar: {
             show: false // Hide the toolbar
           },
@@ -101,12 +104,12 @@ class ProjectChart extends React.Component {
   }
   render() {
     return (
-      <div id="chart">
+      <div >
         <ReactApexChart
           options={this.state.options}
           series={this.state.series}
           type="bar"
-          height={150}
+          height={100}
         />
       </div>
     );

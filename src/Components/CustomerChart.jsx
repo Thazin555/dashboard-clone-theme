@@ -14,13 +14,16 @@ class CustomerChart extends React.Component {
       options: {
         chart: {
           type: "area",
-          width:'100%',
+          
           height: 50,
           // contextMenu: {
           //   show: false // Hide the context menu
           // },
           toolbar: {
             show: false // Hide the toolbar
+          },
+          sparkline: {
+            enabled: true,
           },
           zoom: {
             enabled: false,
@@ -31,6 +34,8 @@ class CustomerChart extends React.Component {
         },
         stroke: {
           curve: "smooth",
+          colors: ["#49beff"], // Set the stroke (line) color here
+          width: 2,
         },
         tooltip:{
           theme:"dark"
@@ -93,13 +98,13 @@ class CustomerChart extends React.Component {
   }
   render() {
     return (
-      <div id="chart">
+      <div >
         <ReactApexChart
           options={this.state.options}
           series={this.state.series}
           type="area"
           
-          height={150}
+          height={90}
         />
       </div>
     );

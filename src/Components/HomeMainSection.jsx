@@ -14,8 +14,8 @@ const HomeMainSection = ({ menu }) => {
     <Container menu={menu}>
       <HomeStatus />
       <HomeUpperPart />
-      <SideApexChart />
       <EmployeeSalary />
+      {/* <SideApexChart /> */}
       <Weekly />
     </Container>
   );
