@@ -2,7 +2,6 @@
 import React from "react";
 
 import EmployeeSalary from "./EmployeeSalary";
-import BasicTable from "./BasicTable";
 
 
 import Container from "./Container";
@@ -13,9 +12,9 @@ import HomeStatus from './HomeStatus'
 import HomeUpperPart from './HomeUpperPart'
 
 
-const HomeMainSection = () => {
+const HomeMainSection = ({menu}) => {
   return (
-    <Container>
+    <Container menu={menu}>
 
       {/* <BasicTable/> */}
     
@@ -23,11 +22,7 @@ const HomeMainSection = () => {
 
       <HomeStatus />
         <HomeUpperPart/>
-      
-
       <SideApexChart />
-      
-
       {/* <EmployeeSalary/> */}
       <Weekly />
     </Container>
