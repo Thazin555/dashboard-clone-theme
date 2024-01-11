@@ -1,4 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap");
+@import url(../node_modules/animate.css/animate.min.css);
+@keyframes slowMotion {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slowMotionDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.slow-motion-animation {
+  animation: slowMotion 300ms ease-out; /* Adjust the duration and easing as needed */
+}
+.slow-motion-down{
+  animation: slowMotionDown 300ms ease-in;
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* .wrap {
+  position: relative;
+  width: calc(100% - 270px);
+  left: 270px;
+}
+
+.min-wrap {
+  position: relative;
+  width: calc(100% - 79px);
+  left: 79px;
+} */
+@media (min-width: 1024px) {
+  .wrap {
+    position: relative;
+    width: calc(100% - 79px);
+    left: 79px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .wrap {
+    position: relative;
+    width: calc(100% - 270px);
+    left: 270px;
+    /* background-color: pink; */
+  }
+  .min-wrap {
+    position: relative;
+    width: calc(100% - 79px);
+    left: 79px;
+    /* background-color: pink; */
+  }
+}

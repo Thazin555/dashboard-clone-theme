@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import HomeMainSection from "../Components/HomeMainSection";
+import React from "react";
+import FormMainSection from "../Components/FormMainSection";
 import SideBar from "../Components/SideBar";
 import NavBar from "../Components/NavBar";
 
-const Home = ({ menu, handleMenu }) => {
+const Form = ({ menu, handleMenu }) => {
   return (
     <div>
       <SideBar menu={menu} />
       <NavBar handleMenu={handleMenu} menu={menu} />
-      <HomeMainSection  menu={menu} />
+      <FormMainSection menu={menu} />
     </div>
   );
 };
 
-export default Home;
+export default Form;
