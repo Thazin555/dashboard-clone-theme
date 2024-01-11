@@ -98,7 +98,7 @@ const SideLogin = () => {
             <Link to="/dashboard">
               <button
                 type="submit"
-                className="text-white text-sm w-full bg-gray-200  focus:ring-4 focus:outline-none
+                className="text-white text-sm w-full bg-blue-700  focus:ring-4 focus:outline-none
      font-normal rounded-lg  px-5 py-2.5 text-center "
               >
                 Sign In

@@ -1,12 +1,13 @@
 import React from "react";
-
+import SideApexChart from "./SideApexChart";
 
 const Weekly = () => {
   return (
-    <div className="mt-10">
-      <div className="grid gap-14 md:gap-10 lg:gap-10 md:grid-cols-12 lg:grid-cols-12 ">
+    <div className="">
+      <div className="block md:grid overflow-scroll gap-14 md:gap-10 lg:gap-10 md:grid-cols-12 lg:grid-cols-12 ">
         {/* grid 1 */}
-        <div          className="col-span-6   md:col-span-4 lg:col-span-4 border
+        <div
+          className="block   md:col-span-4 lg:col-span-4 border
            border-slate-200 px-4 shadow-md "
         >
           {/* grid 1 header */}
@@ -15,7 +16,7 @@ const Weekly = () => {
             <h2 className="text-slate-700">Average sales</h2>
           </div>
           {/* Chart  */}
-          <div id="chart" className=" max-w-[600px] mx-auto my-2  "></div>
+          <SideApexChart />
           {/* Top Sales  */}
           <div className="flex items-center  mb-5 justify-between">
             <div className="flex  items-center">
@@ -30,15 +31,42 @@ const Weekly = () => {
                   d="M0 0h24v24H0z"
                   fill="none"
                 ></path>
-                <path d="M5 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M19 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M19 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                <path
+                  d="M5 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#668eff"
+                ></path>
+                <path
+                  d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#668eff"
+                ></path>
+                <path
+                  d="M19 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#668eff"
+                ></path>
+                <path
+                  d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#668eff"
+                ></path>
+                <path
+                  d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#668eff"
+                ></path>
+                <path
+                  d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#668eff"
+                ></path>
+                <path
+                  d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#668eff"
+                ></path>
+                <path
+                  d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#668eff"
+                ></path>
+                <path
+                  d="M19 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#668eff"
+                ></path>
               </svg>
               <div className="flex-wrap leading-6 items-center justify-center">
                 <h1 className="font-bold text-gray-900">Top Sales</h1>
@@ -68,15 +96,42 @@ const Weekly = () => {
                   d="M0 0h24v24H0z"
                   fill="none"
                 ></path>
-                <path d="M5 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M19 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M19 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                <path
+                  d="M5 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#13deb9"
+                ></path>
+                <path
+                  d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#13deb9"
+                ></path>
+                <path
+                  d="M19 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#13deb9"
+                ></path>
+                <path
+                  d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#13deb9"
+                ></path>
+                <path
+                  d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#13deb9"
+                ></path>
+                <path
+                  d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#13deb9"
+                ></path>
+                <path
+                  d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#13deb9"
+                ></path>
+                <path
+                  d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#13deb9"
+                ></path>
+                <path
+                  d="M19 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#13deb9"
+                ></path>
               </svg>
               <div className="flex-wrap leading-6 items-center justify-center">
                 <h1 className="font-bold text-gray-900">Best Seller</h1>
@@ -106,15 +161,42 @@ const Weekly = () => {
                   d="M0 0h24v24H0z"
                   fill="none"
                 ></path>
-                <path d="M5 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M19 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
-                <path d="M19 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path>
+                <path
+                  d="M5 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#fa8e72"
+                ></path>
+                <path
+                  d="M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#fa8e72"
+                ></path>
+                <path
+                  d="M19 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#fa8e72"
+                ></path>
+                <path
+                  d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#fa8e72"
+                ></path>
+                <path
+                  d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#fa8e72"
+                ></path>
+                <path
+                  d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#fa8e72"
+                ></path>
+                <path
+                  d="M5 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#fa8e72"
+                ></path>
+                <path
+                  d="M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#fa8e72"
+                ></path>
+                <path
+                  d="M19 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 "
+                  fill="#fa8e72"
+                ></path>
               </svg>
               <div className="flex-wrap leading-6 items-center justify-center">
                 <h1 className="font-bold text-gray-900">Most Commented</h1>
@@ -132,7 +214,7 @@ const Weekly = () => {
           </div>
         </div>
         {/* grid 2  */}
-        <div className="col-span-6 md:col-span-8 lg:col-span-8   border border-slate-200 px-4  shadow-md">
+        <div className="block md:col-span-8 lg:col-span-8   border border-slate-200 px-4  shadow-md">
           {/* grid 2 foot header */}
           <div className="flex mt-5 mb-6 px-4 items-center justify-between">
             <div>
@@ -161,7 +243,7 @@ const Weekly = () => {
                   <th scope="col" className="ps-14 md:ps-14 lg:px-6 py-6">
                     Name
                   </th>
-                  <th scope="col" className="px-6 py-6 ps-14 lg:px-6 md:ps-14">
+                  <th scope="col" className="ps-14 md:ps-14 lg:px-6 py-6">
                     Priority
                   </th>
                   <th scope="col" className="px-6 py-6">
@@ -190,7 +272,7 @@ const Weekly = () => {
                   </th>
                   <td className=" ps-14 md:ps-14 lg:px-6 py-4">Elite Admin</td>
                   <td className="ps-14 md:ps-14 lg:px-6 py-4">
-                    <span className="px-2 py-1 text-xs font-semibold text-[#59a2c9] bg-[#e8f7ff] rounded-md">
+                    <span className="px-2 py-1 text-xs font-semibold text-[#13deb9] bg-[#e8f7ff] rounded-md">
                       Low
                     </span>
                   </td>
@@ -251,7 +333,7 @@ const Weekly = () => {
                     MedicalPro Theme
                   </td>
                   <td className="ps-14 md:ps-14 lg:px-6 py-4">
-                    <span className="px-2 py-1 text-xs font-semibold text-orange-400 bg-orange-100 rounded-md">
+                    <span className="px-2 py-1 text-xs font-semibold text-[#ffae1f] bg-orange-100 rounded-md">
                       High
                     </span>
                   </td>
