@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const FormHeading = () => {
   return (
@@ -6,9 +7,9 @@ const FormHeading = () => {
         <div>
           <h1 className=" font-semibold text-[20px] mb-[16px]">Form Wizard</h1>
           <div className="flex items-center gap-3">
-            <a href="" className=" hover:text-[#5d87ff] duration-200">
+            <Link to="/dashboard" className=" hover:text-[#5d87ff] duration-200">
               Dashboard
-            </a>
+            </Link>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className=" w-2 h-2 mt-2"

@@ -4,9 +4,9 @@ import Container from './Container'
 import FormHorizontal from './FormHorizontal'
 import FormVertical from './FormVertical'
 
-const FormMainSection = () => {
+const FormMainSection = ({menu}) => {
   return (
-    <Container>
+    <Container menu={menu}>
         <FormHeading/>
         <FormHorizontal/>
         <FormVertical/>

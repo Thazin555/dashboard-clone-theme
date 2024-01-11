@@ -12,6 +12,7 @@ import FlagIcon from "../img/flag.svg";
 import FlagEs from "../img/flag-es.svg";
 import FlagFr from "../img/flag-fr.svg";
 import FlagCh from "../img/flag-ch.svg";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ handleMenu, menu }) => {
   const [openApp, setOpenApp] = useState(false);
@@ -912,9 +913,12 @@ const NavBar = ({ handleMenu, menu }) => {
                       alt=""
                     />
                   </div>
-                  <button className="font-san text-sm text-[#5d87ff] border border-[#5d87ff] w-full py-2 rounded hover:bg-[#ecf2ff]/50 my-3">
-                    Logout
-                  </button>
+                  <Link to="/">
+                    <button className="font-san text-sm text-[#5d87ff] border border-[#5d87ff] w-full py-2 rounded hover:bg-[#ecf2ff]/50 my-3">
+                      Logout
+                    </button>
+                  </Link>
+
                   {/* </div> */}
                 </div>
               )}
@@ -998,7 +1002,6 @@ const NavBar = ({ handleMenu, menu }) => {
 
         <div></div>
       </nav>
-
     </>
   );
 };

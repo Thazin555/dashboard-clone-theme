@@ -15,6 +15,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/dashboard" element={<Home menu={menu} handleMenu={handleMenu} />}></Route>
+      <Route path="/form" element={<Form menu={menu} handleMenu={handleMenu} />}></Route>
       <Route path="/tables" element={<BasicTable menu={menu} handleMenu={handleMenu} />}></Route>
       <Route path="/" element={<Login />}></Route>
       <Route path="/register" element={<Register />}></Route>
